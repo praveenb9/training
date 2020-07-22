@@ -25,6 +25,7 @@ class TraineeServiceTest {
 				trainee.settId(12);
 				trainee.settName( "king");
 				trainee.setDept( "java");
+				
 		
 	}
 	@Test
