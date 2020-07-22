@@ -20,6 +20,7 @@ public class CollectionDemo {
 		 */
 		
 		
+		
 //		Set trainees= new HashSet(); 
 //		trainees.add("Praveen");
 //		  trainees.add("kohli");
