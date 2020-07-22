@@ -16,21 +16,18 @@ class TraineeServiceTest {
 
 	static ITraineeService service;
 	static Trainee trainee;
-	Map<Integer, Trainee> trainees= new HashMap();
+
+	
 	@BeforeAll
 	public static void Init()
 	{
 		service=new TraineeService();
-		trainee=new Trainee(); 
-				trainee.settId(12);
-				trainee.settName( "king");
-				trainee.setDept( "java");
-				
-		
+		trainee=new Trainee(12, "praveen", "oracle"); 
 	}
 	@Test
 	void testAddTrainee() {
 Trainee newTrainee=service.addTrainee(trainee);
+System.out.println(newTrainee+"is");
 assertEquals(newTrainee, null);
 
 	}
@@ -45,6 +42,7 @@ assertEquals(newTrainee, null);
 	@Test
 	void testRemoveTrainee() {
 boolean flag=service.removeTrainee(trainee.gettId());
+System.out.println(flag);
 assertEquals(flag, true);
 	}
 
