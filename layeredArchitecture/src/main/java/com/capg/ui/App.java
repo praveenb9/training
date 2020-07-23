@@ -28,13 +28,13 @@ public class App {
 			switch (choice) {
 			case 1:System.out.println("Enter details-(ID,Name,Dept)");
 			System.out.println("Enter ID");
-			int id=sc.nextInt();
+			int tid=sc.nextInt();
 			System.out.println("Enter Name");
 			String name=sc.next()+sc.nextLine();
 			System.out.println("Enter dept");
 			String dept=sc.next()+sc.nextLine();
 			
-			Trainee trainee=new Trainee(id, name, dept);
+			Trainee trainee=new Trainee(tid, name, dept);
 			try {
 				t1=controller.addTrainee(trainee);
 				System.out.println("Trainee Added "+t1);
@@ -44,11 +44,13 @@ public class App {
 			}
 				
 				break;
+				
 			case 2:System.out.println("Enter ID of Trainee");
-			int tId=sc.nextInt();
-			Trainee foundTrainee=controller.findTrainee(tId);
+			int id=sc.nextInt();
+			Trainee foundTrainee=controller.findTrainee(id);
 			System.out.println(foundTrainee);
 			break;
+			
 			case 3: System.out.println("Entetr ID of Trainee To Delete");
 			int traineeId=sc.nextInt();
 			boolean flag=controller.deleteTrainee(traineeId);
