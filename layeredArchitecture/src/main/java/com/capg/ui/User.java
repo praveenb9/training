@@ -1,5 +1,6 @@
 package com.capg.ui;
 
+import java.sql.SQLException;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -11,7 +12,10 @@ public class User {
 
 	public static void main(String[] args) {
 		Scanner input =new Scanner(System.in);
-		ITraineeService service=new TraineeService();
+		ITraineeService service;
+		try {
+			service = new TraineeService();
+		
 		
 		while (true) {
 			
@@ -74,7 +78,10 @@ public class User {
 				break;
 			}	
 		
-		
-}
+		}} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		}
 }

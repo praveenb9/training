@@ -2,6 +2,7 @@ package com.capg.service;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -19,13 +20,13 @@ class TraineeServiceTest {
 
 	
 	@BeforeAll
-	public static void Init()
+	public static void Init() throws SQLException
 	{
 		service=new TraineeService();
 		trainee=new Trainee(12, "praveen", "oracle"); 
 	}
 	@Test
-	void testAddTrainee() {
+	void testAddTrainee() throws SQLException {
 Trainee newTrainee=service.addTrainee(trainee);
 System.out.println(newTrainee+"is");
 assertEquals(newTrainee, null);
@@ -33,14 +34,14 @@ assertEquals(newTrainee, null);
 	}
 
 	@Test
-	void testFindTrainee() {
+	void testFindTrainee() throws SQLException {
 		Trainee t=service.findTrainee(trainee.gettId());
 		System.out.println(t);
 		assertEquals(t, trainee);
 	}
 
 	@Test
-	void testRemoveTrainee() {
+	void testRemoveTrainee() throws SQLException {
 boolean flag=service.removeTrainee(trainee.gettId());
 System.out.println(flag);
 assertEquals(flag, true);
