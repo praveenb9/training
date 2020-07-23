@@ -26,5 +26,6 @@ public class TraineeDbOperations {
 		t1.settName("king");
 		tx.commit();
 		System.out.println(t1);
+		System.out.println("updated");
 	}
 }
