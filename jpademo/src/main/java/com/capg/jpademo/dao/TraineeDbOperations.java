@@ -21,7 +21,10 @@ public class TraineeDbOperations {
 		tx.begin();
 		//em.persist(t1);
 		Trainee t1=em.find(Trainee.class, 101);
+	
+//		em.detach(t1);
+		t1.settName("king");
 		tx.commit();
-		//System.out.println("trainee added");
+		System.out.println(t1);
 	}
 }
