@@ -32,19 +32,19 @@ public class TraineeDaodbcBased implements ITraineeDAO {
 			return null;
 	}
 
-	public Trainee findTrainee(int tId) throws SQLException {
+	public Trainee findTrainee(int id) throws SQLException {
 		Trainee trainee = new Trainee();
-		ps=con.prepareStatement("select * from trainee where id=?");  
-        ps.setInt(1,tId); 
+		ps=con.prepareStatement("select * from trainee where tId=?");  
+        ps.setInt(1,id); 
         ResultSet rs = ps.executeQuery();
         if(rs!=null)
         {
        
 		while(rs.next())
         {
-        	trainee.settId(rs.getInt("id"));
-        	trainee.settName(rs.getString("name"));
-        	trainee.setDept(rs.getString("depts"));
+        	trainee.settId(rs.getInt("tId"));
+        	trainee.settName(rs.getString("tName"));
+        	trainee.setDept(rs.getString("dept"));
         }
 		return trainee;
 		
@@ -65,4 +65,12 @@ else
 	return false;
 }
 
+	public Trainee viewTraiees() throws SQLException
+	{
+		ps=con.prepareStatement("select * from trainee");
+	ResultSet trainees=	ps.executeQuery();
+	
+	return null;
+	
+	}
 }
