@@ -69,6 +69,7 @@ else
 	{
 		ps=con.prepareStatement("select * from trainee");
 	ResultSet trainees=	ps.executeQuery();
+	
 	return null;
 	
 	}
