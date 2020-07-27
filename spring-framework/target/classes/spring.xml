@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="jio" class="com.capg.spring_framework.Jio">
+<constructor-arg name="callCharge" value="2"></constructor-arg>
+<constructor-arg name="browsingSpeed" value="25"/>
+</bean>
+<bean id="idea" class="com.capg.spring_framework.Idea">
+<property name="callCharge" value="2"></property>
+<property name="browsingSpeed" value="20"></property>
+</bean>
+<bean id="mobile" class="com.capg.spring_framework.Mobile">
+<property name="sim" ref="jio"></property>
+</bean>
+</beans>
