@@ -1,10 +1,21 @@
 package com.capg.spring_framework;
 
+import java.util.List;
+
 public class Idea implements Sim {
 	
 	private float callCharge;
 	private float browsingSpeed;
+	private List<String> supportedNetworks;
 	
+
+	public List<String> getSupportedNetworks() {
+		return supportedNetworks;
+	}
+
+	public void setSupportedNetworks(List<String> supportedNetworks) {
+		this.supportedNetworks = supportedNetworks;
+	}
 
 	public float getCallCharge() {
 		return callCharge;
@@ -41,6 +52,10 @@ public class Idea implements Sim {
 			public void search() {
 		System.out.println("Searching with idea... browsing speed: "+browsingSpeed);		
 			}
-
+			public void showSupportedNets()
+			{
+				System.out.println("supported networks are ");
+				supportedNetworks.forEach(n->System.out.println(n));
+			}
 
 }

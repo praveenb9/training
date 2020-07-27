@@ -4,4 +4,5 @@ public interface Sim {
 
 	void call();
 	void search();
+	void showSupportedNets();
 }

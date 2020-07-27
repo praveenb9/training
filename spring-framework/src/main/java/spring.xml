@@ -4,15 +4,42 @@
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<bean id="jio" class="com.capg.spring_framework.Jio">
-<constructor-arg name="callCharge" value="2"></constructor-arg>
-<constructor-arg name="browsingSpeed" value="25"/>
-</bean>
-<bean id="idea" class="com.capg.spring_framework.Idea">
-<property name="callCharge" value="2"></property>
-<property name="browsingSpeed" value="20"></property>
-</bean>
-<bean id="mobile" class="com.capg.spring_framework.Mobile">
-<property name="sim" ref="jio"></property>
-</bean>
+ <bean id="jio" class="com.capg.spring_framework.Jio">
+ <constructor-arg name="callCharge" value="2"></constructor-arg>
+ <constructor-arg name="browsingSpeed" value="25"/>
+ 
+  <property name="supportedNetworks">
+ <list>
+ <value>GSM</value>
+ <value>Edge</value>
+ <value>HSPA</value>
+ <value>LTE</value>
+ <value>VoLTE</value>
+ </list>
+
+ </property>
+ </bean>
+ <!--  
+ <bean id="idea" class="com.capg.spring_framework.Idea">
+ <property name="callCharge" value="2"></property>
+ <property name="browsingSpeed" value="20"></property>
+ <property name="supportedNetworks">
+ <list>
+ <value>GSM</value>
+ <value>Edge</value>
+ <value>HSPA</value>
+ <value>LTE</value>
+ <value>HSPA</value>
+ <value>LTE</value>
+ </list>
+
+ </property>
+ </bean>
+ <bean id="mobile1" class="com.capg.spring_framework.Mobile">
+ <property name="sim" ref="idea"></property>
+ </bean>
+ -->
+ 
+     <bean id="mobile2" class="com.capg.spring_framework.Mobile" autowire="byType">
+ </bean>
 </beans>

@@ -1,11 +1,22 @@
 package com.capg.spring_framework;
 
+import java.util.List;
+
 public class Jio implements Sim {
 
 	private float browsingSpeed;
 	private float callCharge;
+	private List<String> supportedNetworks;
 	
 	
+	public List<String> getSupportedNetworks() {
+		return supportedNetworks;
+	}
+
+	public void setSupportedNetworks(List<String> supportedNetworks) {
+		this.supportedNetworks = supportedNetworks;
+	}
+
 	public float getBrowsingSpeed() {
 		return browsingSpeed;
 	}
@@ -42,4 +53,9 @@ System.out.println("Jio calling  call charge: "+callCharge);
 System.out.println("Searching with Jio... browsing speed: "+browsingSpeed);		
 	}
 
+	public void showSupportedNets()
+	{
+		System.out.println("supported networks are ");
+		supportedNetworks.forEach(n->System.out.println(n));
+	}
 }
