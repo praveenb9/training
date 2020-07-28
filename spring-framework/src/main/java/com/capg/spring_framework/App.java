@@ -22,5 +22,16 @@ Mobile m=container.getBean("mobile",Mobile.class);
 m.call();
 m.search();
 m.showSupportedNets();
+m.getSim().setBrowsingSpeed(15.5f);
+m.getSim().setCallCharge(1.5f);
+
+Mobile m2=container.getBean("mobile",Mobile.class);
+m2.call();
+m2.search();
+m2.showSupportedNets();
+m2.getSim().setBrowsingSpeed(15.5f);
+m2.getSim().setCallCharge(1.5f);
+
+Sim sim=(Sim)container.getBean("jio");
     }
 }

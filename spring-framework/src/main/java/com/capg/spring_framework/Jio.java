@@ -1,11 +1,27 @@
 package com.capg.spring_framework;
 
 import java.util.List;
+import java.util.jar.Attributes.Name;
 
-public class Jio implements Sim {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
+@Component("jio")
+@Lazy
+@Scope("prototype")
+public class Jio implements Sim , InitializingBean, DisposableBean{
+
+	@Value("${jio.browsingSpeed}")
 	private float browsingSpeed;
+	
+	@Value("${jio.callCharge}")
 	private float callCharge;
+	
+	@Value("${jio.supportedNetworks}")
 	private List<String> supportedNetworks;
 	
 	
@@ -36,7 +52,15 @@ public class Jio implements Sim {
 	
 	public Jio() {
 		// TODO Auto-generated constructor stub
+		System.out.println("jio bean is created");
+
 	}
+	
+//	@PostConstruct
+//	public void init()
+//	{
+//		System.out.println("x");
+//	}
 
 	public Jio(float browsingSpeed, float callCharge) {
 		super();
@@ -57,5 +81,16 @@ System.out.println("Searching with Jio... browsing speed: "+browsingSpeed);
 	{
 		System.out.println("supported networks are ");
 		supportedNetworks.forEach(n->System.out.println(n));
+	}
+
+	@Override
+	public void afterPropertiesSet() throws Exception {
+System.out.println("Jio sim initialized");		
+	}
+
+	@Override
+	public void destroy() throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 }
