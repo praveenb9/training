@@ -1,4 +1,4 @@
-package com.capg.spring_labbook;
+package com.capg.spring_labbook.lab1_1;
 
 public class Employee {
 
