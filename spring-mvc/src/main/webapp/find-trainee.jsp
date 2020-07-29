@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" isELIgnored="false"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,10 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>${msg} welcome</h1>
-Trainee found: 
-<p>ID: ${trainee.tId }
-<p>Name: ${trainee.tName}
-<p>Dept ${trainee.dept }
+<form action="find" method="get">
+Enter ID : <input type="number" name="tId">
+<input type="submit" value="search">
+</form>
+
 </body>
 </html>

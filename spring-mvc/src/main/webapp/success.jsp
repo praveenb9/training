@@ -4,13 +4,10 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Success</title>
 </head>
 <body>
-<h1>${msg} welcome</h1>
-Trainee found: 
-<p>ID: ${trainee.tId }
-<p>Name: ${trainee.tName}
-<p>Dept ${trainee.dept }
+ Trainee Added successfully
+ ${trainee }
 </body>
 </html>
