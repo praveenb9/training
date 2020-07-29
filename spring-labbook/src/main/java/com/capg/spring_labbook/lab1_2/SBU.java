@@ -1,5 +1,8 @@
 package com.capg.spring_labbook.lab1_2;
 
+import org.springframework.stereotype.Component;
+
+@Component("sbu")
 public class SBU {
 
 private int sbuId;
@@ -23,5 +26,10 @@ public String getSbuHead() {
 public void setSbuHead(String sbuHead) {
 	this.sbuHead = sbuHead;
 }
+@Override
+public String toString() {
+	return "SBU [sbuId=" + sbuId + ", sbuName=" + sbuName + ", sbuHead=" + sbuHead + "]";
+}
+
 
 }

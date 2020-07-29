@@ -1,11 +1,20 @@
 package com.capg.spring_labbook.lab1_2;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component(value = "employee")
 public class Employee {
+
 
 	private int employeeId;
 	private String employeeName;
 	private double salary;
+	@Autowired
+	@Qualifier("sbu")
 	private SBU busiessUnit;
+	
 	public int getEmployeeId() {
 		return employeeId;
 	}
@@ -37,5 +46,17 @@ public class Employee {
 		return busiessUnit;
 		
 	}
+	
+	public Employee(int employeeId, String employeeName, double salary) {
+		super();
+		this.employeeId = employeeId;
+		this.employeeName = employeeName;
+		this.salary = salary;
+	}
+	@Override
+	public String toString() {
+		return "Employee [employeeId=" + employeeId + ", employeeName=" + employeeName + ", salary=" + salary + "]";
+	}
+
 	
 }

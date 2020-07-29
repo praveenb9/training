@@ -15,7 +15,8 @@ public class Mobile implements InitializingBean {
 	@Autowired
 	@Qualifier("idea")
 	private Sim sim;
-	
+
+
 	
 	public Sim getSim() {
 		return sim;

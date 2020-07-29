@@ -4,7 +4,7 @@
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
- <bean id="employee" class="com.capg.spring_labbook.Employee">
+ <bean id="employee" class="com.capg.spring_labbook.lab1_1.Employee">
  <constructor-arg name="employeeId" value="121"></constructor-arg>
   <constructor-arg name="employeeName" value="Praveen"></constructor-arg>
   <constructor-arg name="salary" value="40000"></constructor-arg>
@@ -13,5 +13,15 @@
   
  
  </bean>
+ <bean id="sbu" class="com.capg.spring_labbook.lab1_2.SBU">
+ <property name="sbuId" value="1"></property>
+ <property name="sbuName" value="FBU"></property>
+ <property name="sbuHead" value="Subhash"></property>
+ </bean>
  
+ <bean id="sbu2" class="com.capg.spring_labbook.lab1_3.SBU">
+ <property name="sbuCode" value="1"></property>
+ <property name="sbuName" value="FBU"></property>
+ <property name="sbuHead" value="Subhash"></property>
+ </bean>
 </beans>
