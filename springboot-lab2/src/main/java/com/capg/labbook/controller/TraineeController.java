@@ -27,16 +27,16 @@ public class TraineeController {
 	@PostMapping("/home")
 	public String homePage(@RequestParam("uname") String name, @RequestParam("password") String password, Model m)
 	{
-//	boolean flag=service.loginValidation(name, password);
-//	if(flag==true)
-//	{
-//		return "manage";
-//	}
-//	else {
-//		m.addAttribute("login","invalid Login");
-//		return "login";
-//	}
+	boolean flag=service.loginValidation(name, password);
+	if(flag==true)
+	{
 		return "manage";
+	}
+	else {
+		m.addAttribute("login","invalid Login");
+		return "login";
+	}
+		
 	}
 	
 	@PostMapping("/add")
@@ -57,5 +57,14 @@ public class TraineeController {
 		m.addAttribute("operation", "deleted successfullly");
 
 		return "view";
+	}
+	
+	@PostMapping("/find")
+	public String findTrainee(@RequestParam("traineeId") int id, Model m)
+	{
+		
+		m.addAttribute("trainee",service.find(id) );
+		m.addAttribute("information", "Trainee Info");
+		return "delete-trainee";
 	}
 }

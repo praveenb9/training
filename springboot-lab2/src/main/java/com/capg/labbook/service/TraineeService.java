@@ -29,4 +29,9 @@ public class TraineeService {
 		return dao.validateLogin(uName, password);
 		
 	}
+
+	public Trainee find(int id) {
+		return dao.findTrainee(id);
+		
+	}
 }

@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Delete Operation</h1>
-<form action="/deletetrainee" method="post">
+<form action="/find" method="post">
 <table class="col-mid-4" border="1">
 
 <tr>
@@ -19,14 +19,37 @@ Please enter trainee ID
 <input type="number" name="traineeId" >
 </td>
 <td>
-<button type="submit">delete</button>
+<button type="submit">search</button>
 </td>
 </tr>
 
 
 </table>
-
-
+</form>
+<br>
+<form action="/deletetrainee" method="post">
+<h1>${information }</h1>
+<br>
+<table class="col-mid-4" border="1">
+<tr>
+<th>Trainee ID</th>
+<th>Trainee Name</th>
+<th>Trainee Location</th>
+<th>Trainee Domain</th>
+</tr>
+<tr>
+<td>${trainee.traineeId}</td>
+<td>${trainee.traineeName}</td>
+<td>${trainee.traineeLocation}</td>
+<td>${trainee.traineeDomain}</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td><input type="submit" value="Delete"></td>
+</tr>
+</table>
 
 </form>
 </body>

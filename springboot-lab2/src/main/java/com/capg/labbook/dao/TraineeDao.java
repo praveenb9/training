@@ -27,11 +27,11 @@ Map<Integer, Trainee> traineeList =new HashMap<Integer, Trainee>();
 	
 	public boolean validateLogin(String uName,String password)
 	{
+		
 		boolean flag=false;
-		if(logins.containsKey(uName) && logins.get(uName)==password)
+		if(logins.containsKey(uName) && logins.get(uName).equals(password))
 		{
 			flag=true;
-			System.out.println("truee");
 			return flag;
 		}
 		else
@@ -42,10 +42,10 @@ Map<Integer, Trainee> traineeList =new HashMap<Integer, Trainee>();
 	}
 	
 	public HashMap<String, String> loginId() {
-		HashMap<String, String> logins=new HashMap<String,String>();
-		logins.put("praveen","12345678");
-		logins.put("king","1234");
-		return logins;
+		HashMap<String, String> loginIds=new HashMap<String,String>();
+		loginIds.put("praveen","12345678");
+		loginIds.put("king","1234");
+		return loginIds;
 		}
 
 	public Trainee findTrainee(int tid) {
