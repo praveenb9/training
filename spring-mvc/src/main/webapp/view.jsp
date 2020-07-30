@@ -12,5 +12,9 @@ Trainee found:
 <p>ID: ${trainee.tId }
 <p>Name: ${trainee.tName}
 <p>Dept ${trainee.dept }
+
+<form action="index.jsp">
+ <input type="submit" value="home">
+ </form>
 </body>
 </html>

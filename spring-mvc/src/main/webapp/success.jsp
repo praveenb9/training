@@ -9,5 +9,8 @@
 <body>
  Trainee Added successfully
  ${trainee }
+ <form action="index.jsp">
+ <input type="submit" value="home">
+ </form>
 </body>
 </html>

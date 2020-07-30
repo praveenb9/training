@@ -7,10 +7,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="find" method="get">
+<form action="find" >
 Enter ID : <input type="number" name="tId">
 <input type="submit" value="search">
 </form>
-
+<form action="index.jsp">
+ <input type="submit" value="home">
+ </form>
 </body>
 </html>
