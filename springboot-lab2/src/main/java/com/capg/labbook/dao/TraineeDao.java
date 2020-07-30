@@ -47,4 +47,10 @@ Map<Integer, Trainee> traineeList =new HashMap<Integer, Trainee>();
 		logins.put("king","1234");
 		return logins;
 		}
+
+	public Trainee findTrainee(int tid) {
+
+		return traineeList.get(tid);
+
+	}
 }

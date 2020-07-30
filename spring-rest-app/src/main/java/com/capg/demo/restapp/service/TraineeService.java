@@ -1,10 +1,13 @@
-package com.capg.labbook.service;
+package com.capg.demo.restapp.service;
+
+import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.capg.labbook.dao.TraineeDao;
-import com.capg.labbook.model.Trainee;
+import com.capg.demo.restapp.dao.TraineeDao;
+import com.capg.demo.restapp.model.Trainee;
 
 
 @Service
@@ -23,10 +26,13 @@ public class TraineeService {
 		return dao.deleteTrainee(id);
 	}
 	
-	
-	public boolean loginValidation(String uName,String password)
+	public Trainee findTrainee(int id)
 	{
-		return dao.validateLogin(uName, password);
-		
+		return dao.findTrainee(id);
+	}
+	 
+	public  List<Trainee> TraineeList()
+	{
+		return dao.viewTrainees();
 	}
 }
