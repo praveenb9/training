@@ -64,7 +64,7 @@ public class TraineeController {
 	{
 		
 		m.addAttribute("trainee",service.find(id) );
-		m.addAttribute("information", "Trainee Info");
+m.addAttribute("traineeId", id);
 		return "delete-trainee";
 	}
 }

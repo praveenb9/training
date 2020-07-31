@@ -28,7 +28,7 @@ Please enter trainee ID
 </form>
 <br>
 <form action="/deletetrainee" method="post">
-<h1>${information }</h1>
+<h1>Trainee Info</h1>
 <br>
 <table class="col-mid-4" border="1">
 <tr>
@@ -46,8 +46,10 @@ Please enter trainee ID
 <tr>
 <td></td>
 <td></td>
-<td></td>
-<td><input type="submit" value="Delete"></td>
+<td><!-- <input type="number" value="${traineeId }"> --></td>
+<td><button type="submit" name="${traineeId }">Delete</button>
+<!--<input type="submit" value="${traineeId }">delete -->
+</td>
 </tr>
 </table>
 
