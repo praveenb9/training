@@ -5,12 +5,16 @@ import java.time.LocalDate;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 public class Student {
 
 	@Id
 	private int studentId;
 	private String studentName;
+	@DateTimeFormat(pattern = "yyyy/MM/dd")
 	private LocalDate dob;
 	public Student() {
 		// TODO Auto-generated constructor stub

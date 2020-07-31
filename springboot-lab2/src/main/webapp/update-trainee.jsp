@@ -7,6 +7,25 @@
 <title>Insert title here</title>
 </head>
 <body>
-update
+<h1>Modify Operation</h1>
+<form action="http://localhost:8083/trainee/modifytrainee" method="post">
+<table class="col-mid-4" border="1">
+
+<tr>
+<td>
+Please enter trainee ID
+</td>
+<td>
+<input type="number" name="traineeId">
+</td>
+<td>
+<button type="submit">modify</button>
+</td>
+</tr>
+
+
+</table>
+
+</form>
 </body>
 </html>

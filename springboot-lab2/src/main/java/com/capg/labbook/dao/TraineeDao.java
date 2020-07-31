@@ -11,8 +11,7 @@ import com.capg.labbook.model.Trainee;
 public class TraineeDao {
 
 Map<Integer, Trainee> traineeList =new HashMap<Integer, Trainee>();
-	Map<String, String> logins= loginId();
-	
+	Map<String, String> logins= new HashMap<>();
 	public Trainee addTrainee(Trainee t)
 	{
 		traineeList.put(t.getTraineeId(), t);
@@ -41,16 +40,22 @@ Map<Integer, Trainee> traineeList =new HashMap<Integer, Trainee>();
 		}		
 	}
 	
-	public HashMap<String, String> loginId() {
-		HashMap<String, String> loginIds=new HashMap<String,String>();
-		loginIds.put("praveen","12345678");
-		loginIds.put("king","1234");
-		return loginIds;
-		}
+//	public HashMap<String, String> loginId() {
+//		HashMap<String, String> loginIds=new HashMap<String,String>();
+//		loginIds.put("praveen","12345678");
+//		loginIds.put("king","1234");
+//		return loginIds;
+//		}
 
 	public Trainee findTrainee(int tid) {
 
 		return traineeList.get(tid);
+
+	}
+	public TraineeDao() {
+
+		logins.put("praveen","12345678");
+		logins.put("king","1234");
 
 	}
 }
