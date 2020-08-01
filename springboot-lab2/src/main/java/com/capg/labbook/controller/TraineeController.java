@@ -62,9 +62,62 @@ public class TraineeController {
 	@PostMapping("/find")
 	public String findTrainee(@RequestParam("traineeId") int id, Model m)
 	{
-		
-		m.addAttribute("trainee",service.find(id) );
-m.addAttribute("traineeId", id);
+		Trainee tr =service.find(id);
+		if(tr!=null)
+		{
+		m.addAttribute("trainee",tr);
+         m.addAttribute("traineeId", id);
 		return "delete-trainee";
+		}
+		else
+		{
+			m.addAttribute("traineeid", id);
+			m.addAttribute("operation", " Not Found");
+return "view";
+		}
+	}
+	
+	@PostMapping("/modifytrainee")
+	public String modifyTrainee(@RequestParam("traineeId") int id, Model m)
+	{
+		m.addAttribute("trainee", service.find(id));
+		return "update-trainee";
+	}
+	
+	@PostMapping("/updatetrainee")
+	public String updateTrainee(@ModelAttribute Trainee t, Model m)
+	{
+		Trainee tr =service.updateTrainee(t);
+		if(tr!=null)
+		{
+		m.addAttribute("traineeid", tr.getTraineeId());
+		m.addAttribute("operation", "updated successfullly");
+		
+		return "view";	
+		}
+		else
+		{
+			m.addAttribute("traineeid", t.getTraineeId());
+			m.addAttribute("operation", " Not Found");
+return "view";
+		}
+	}
+	
+	@PostMapping("/retrivetrainee")
+	public String getTrainee(@RequestParam("traineeId") int id,Model m)
+	{
+		Trainee tr =service.find(id);
+		if(tr!=null)
+		{
+		m.addAttribute("trainee",tr);
+         m.addAttribute("traineeId", id);
+		return "retrive";
+		}
+		else
+		{
+			m.addAttribute("traineeid", id);
+			m.addAttribute("operation", " Not Found");
+return "view";
+		}
 	}
 }

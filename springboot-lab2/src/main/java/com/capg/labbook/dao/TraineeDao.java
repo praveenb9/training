@@ -49,7 +49,15 @@ Map<Integer, Trainee> traineeList =new HashMap<Integer, Trainee>();
 
 	public Trainee findTrainee(int tid) {
 
-		return traineeList.get(tid);
+		if(traineeList.containsKey(tid))
+		{
+			return traineeList.get(tid);
+	
+		}
+		else
+		{
+			return null;
+		}
 
 	}
 	public TraineeDao() {
@@ -57,5 +65,20 @@ Map<Integer, Trainee> traineeList =new HashMap<Integer, Trainee>();
 		logins.put("praveen","12345678");
 		logins.put("king","1234");
 
+	}
+
+	public Trainee updateTrainee(Trainee t) {
+	
+		System.out.println(t);
+		if(traineeList.containsKey(t.getTraineeId()))
+		{
+			traineeList.replace(t.getTraineeId(), t);
+			System.out.println(traineeList.get(t.getTraineeId()));
+			return t;
+			
+		}
+		else
+			return null;
+		
 	}
 }

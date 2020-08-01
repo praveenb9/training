@@ -34,4 +34,9 @@ public class TraineeService {
 		return dao.findTrainee(id);
 		
 	}
+
+	public Trainee updateTrainee(Trainee t) {
+
+		return dao.updateTrainee(t);
+	}
 }

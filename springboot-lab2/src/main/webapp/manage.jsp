@@ -36,21 +36,14 @@
 <tr>
 <td>
 
-<a href="modify-trainee.jsp">Modify a Trainee</a>
+<a href="retrive.jsp">Retrive a Trainee</a>
 
 </td>
 </tr>
 <tr>
 <td>
 
-<a href="retrive-trainee.jsp">Retrive a Trainee</a>
-
-</td>
-</tr>
-<tr>
-<td>
-
-<a href="retriveall.jsp">Retrive a Trainee</a>
+<a href="retriveall.jsp">Retrive all Trainee</a>
 
 </td>
 </tr>
