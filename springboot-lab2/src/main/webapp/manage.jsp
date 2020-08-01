@@ -43,7 +43,7 @@
 <tr>
 <td>
 
-<a href="retriveall.jsp">Retrive all Trainee</a>
+<a href="/retriveAll">Retrive all Trainee</a>
 
 </td>
 </tr>

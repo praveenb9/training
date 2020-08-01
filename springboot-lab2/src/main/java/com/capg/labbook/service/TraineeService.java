@@ -1,5 +1,8 @@
 package com.capg.labbook.service;
 
+import java.util.List;
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -38,5 +41,10 @@ public class TraineeService {
 	public Trainee updateTrainee(Trainee t) {
 
 		return dao.updateTrainee(t);
+	}
+	
+	public List<Trainee> findAllTrainees()
+	{
+		return dao.viewTrainees();
 	}
 }

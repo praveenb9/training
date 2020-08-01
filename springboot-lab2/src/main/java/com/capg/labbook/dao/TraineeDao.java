@@ -1,7 +1,9 @@
 package com.capg.labbook.dao;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Repository;
 
@@ -58,6 +60,14 @@ Map<Integer, Trainee> traineeList =new HashMap<Integer, Trainee>();
 		{
 			return null;
 		}
+
+	}
+	
+	public List< Trainee> viewTrainees()
+	{
+		//Set set=traineeList.keySet();
+		return traineeList.values().stream().collect(Collectors.toList());
+		
 
 	}
 	public TraineeDao() {

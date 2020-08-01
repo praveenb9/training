@@ -1,5 +1,7 @@
 package com.capg.labbook.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.capg.labbook.model.Trainee;
 import com.capg.labbook.service.TraineeService;
+import com.fasterxml.jackson.annotation.JsonCreator.Mode;
 
 
 @Controller
@@ -49,7 +52,7 @@ public class TraineeController {
 		return "view";
 	}
 	
-	@PostMapping("/deletetrainee")
+	@GetMapping("/deletetrainee")
 	public String deleteTrainee(@RequestParam("traineeId") int id,Model m)
 	{
 		service.deleteTrainee(id);
@@ -118,6 +121,22 @@ return "view";
 			m.addAttribute("traineeid", id);
 			m.addAttribute("operation", " Not Found");
 return "view";
+		}
+	}
+	
+	@GetMapping("/retriveAll")
+	public String getAllTrainees(Model m)
+	{
+		List <Trainee> traineeList=service.findAllTrainees();
+		if(traineeList.isEmpty())
+		{
+			m.addAttribute("operation", " No Trainees Found");
+			return "view";
+		}
+		else
+		{
+		m.addAttribute("traineelist", traineeList);
+		return "retriveAll";		
 		}
 	}
 }

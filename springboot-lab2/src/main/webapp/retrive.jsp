@@ -24,12 +24,9 @@ Please enter trainee ID
 </tr>
 </table>
 </form>
-<form action="manage.jsp">
-<input type="submit" value="Back">
-</form>
+
 <h1>Trainee Info</h1>
 <br>
-<form action="retive.jsp">
 <table class="col-mid-4" border="1">
 <tr>
 <th>Trainee ID</th>
@@ -44,7 +41,9 @@ Please enter trainee ID
 <td>${trainee.traineeDomain}</td>
 </tr>
 </table>
-<input type="submit" value="Back">
+
+<form action="manage.jsp">
+<input type="submit" value="Home">
 </form>
 </body>
 </html>
