@@ -63,4 +63,17 @@ public class StudentController {
 return "success.jsp";
 
 	}
+	
+	@PostMapping("/updateStudent")
+	public String updateStudent(@ModelAttribute(name = "student") Student student, Model m)
+	{
+ 
+	rt.put("http://localhost:8888/student", student);
+	
+	m.addAttribute("operation", "Student With ID");
+	//m.addAttribute("student", st);
+	m.addAttribute("status", "updated");
+	return "success.jsp";
+	}
+	
 }
