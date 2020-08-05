@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.capg.demo.movie.dao.MovieCatalogRepo;
 import com.capg.demo.movie.model.MovieCatalog;
+import com.netflix.ribbon.proxy.annotation.Hystrix;
 //import com.netflix.loadbalancer.Server;
 
 @Service
@@ -30,6 +31,8 @@ public class MovieCatalogService {
 		return savedCatalog;
 		
 	}
+	
+
 	public MovieCatalog getCatalog(int id)
 	{
 		MovieCatalog savedCatalog=repo.getOne(id);
