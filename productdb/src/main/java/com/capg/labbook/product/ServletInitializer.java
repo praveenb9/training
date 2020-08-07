@@ -1,4 +1,4 @@
-package com.capg.demo.productdb;
+package com.capg.labbook.product;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

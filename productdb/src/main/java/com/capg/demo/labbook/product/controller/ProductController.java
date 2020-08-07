@@ -1,4 +1,4 @@
-package com.capg.demo.productdb.controller;
+package com.capg.demo.labbook.product.controller;
 
 import java.util.List;
 
@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.capg.demo.productdb.exception.ProductAlreadyExistsException;
-import com.capg.demo.productdb.exception.ProductDoesnotExistException;
-import com.capg.demo.productdb.model.Product;
-import com.capg.demo.productdb.service.ProductService;
+import com.capg.demo.labbook.product.exception.ProductAlreadyExistsException;
+import com.capg.demo.labbook.product.exception.ProductDoesnotExistException;
+import com.capg.demo.labbook.product.model.Product;
+import com.capg.demo.labbook.product.service.ProductService;
 
 @RestController
 public class ProductController {

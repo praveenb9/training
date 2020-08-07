@@ -1,4 +1,4 @@
-package com.capg.demo.productdb.model;
+package com.capg.demo.labbook.product.model;
 
 import java.util.Date;
 

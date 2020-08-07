@@ -1,14 +1,14 @@
-package com.capg.demo.productdb.service;
+package com.capg.demo.labbook.product.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.capg.demo.productdb.exception.ProductAlreadyExistsException;
-import com.capg.demo.productdb.exception.ProductDoesnotExistException;
-import com.capg.demo.productdb.model.Product;
-import com.capg.demo.productdb.repo.ProductRepo;
+import com.capg.demo.labbook.product.exception.ProductAlreadyExistsException;
+import com.capg.demo.labbook.product.exception.ProductDoesnotExistException;
+import com.capg.demo.labbook.product.model.Product;
+import com.capg.demo.labbook.product.repo.ProductRepo;
 
 @Service
 public class ProductService {
