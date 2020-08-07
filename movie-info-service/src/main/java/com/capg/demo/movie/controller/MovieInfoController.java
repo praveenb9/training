@@ -1,5 +1,7 @@
 package com.capg.demo.movie.controller;
 
+import java.beans.Transient;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,22 +20,27 @@ public class MovieInfoController {
 	@Autowired
 	MovieInfoService service;
 	
-	@GetMapping(value = "/getMovieInfo/id/{id}")
+	@GetMapping("/info/id/{id}")
+	
 	//@Produces("application/json")
-	@HystrixCommand(fallbackMethod = "getMovieInfoFallBack"
-	,
-	commandProperties = {
-	 @HystrixProperty(name = "execution.timeout.enabled",value = "true" ), 
-	 @HystrixProperty(name = "circuitBreaker.enabled", value = "true"),
-	 @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "2000"),
-	 @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "50"),
-	 @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "5"),
-	 @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "5000")
-				}
-	)
+//	@HystrixCommand(fallbackMethod = "getMovieInfoFallBack"
+//	,
+//	commandProperties = {
+//	 @HystrixProperty(name = "execution.timeout.enabled",value = "true" ), 
+//	 @HystrixProperty(name = "circuitBreaker.enabled", value = "true"),
+//	 @HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "2000"),
+//	 @HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "50"),
+//	 @HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "5"),
+//	 @HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "5000")
+//				}
+//	)
+
 	public MovieInfo getMovieInfo(@PathVariable int id)
 	{
-	return	service.getMovieInfo(id);
+		//MovieInfo movieInfo=new MovieInfo();
+	MovieInfo catalogInfo=	service.getMovieInfoCatalog(id);
+	MovieInfo ratingInfo=service.getMovieInfoRating(id);
+	return	new MovieInfo(id, catalogInfo.getMovieName(), ratingInfo.getRating(), ratingInfo.getMovieRatingPort(), catalogInfo.getMovieCatalogPort());
 
 	}
 	@PostMapping("/addMovie")
@@ -44,9 +51,9 @@ public class MovieInfoController {
 	}
 	
 	//@GetMapping("/getMovieInfo/id/{id}")
-	public MovieInfo getMovieInfoFallBack(@PathVariable int id)
-	{
-	return	new MovieInfo(id, "Idiot", 5.0);
-
-	}
+//	public MovieInfo getMovieInfoFallBack(@PathVariable int id)
+//	{
+//	return	new MovieInfo(id, "Idiot", 5.0);
+//
+//	}
 }

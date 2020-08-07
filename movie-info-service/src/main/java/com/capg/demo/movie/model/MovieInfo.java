@@ -46,5 +46,13 @@ public class MovieInfo {
 	public void setMovieCatalogPort(int movieCatalogPort) {
 		this.movieCatalogPort = movieCatalogPort;
 	}
+	public MovieInfo(int id, String movieName, double rating, int movieRatingPort, int movieCatalogPort) {
+		super();
+		this.id = id;
+		this.movieName = movieName;
+		this.rating = rating;
+		this.movieRatingPort = movieRatingPort;
+		this.movieCatalogPort = movieCatalogPort;
+	}
 	
 }

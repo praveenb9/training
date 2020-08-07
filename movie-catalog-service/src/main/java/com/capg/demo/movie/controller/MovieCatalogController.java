@@ -1,6 +1,7 @@
 package com.capg.demo.movie.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,19 +20,10 @@ public class MovieCatalogController {
 	MovieCatalogService service;
 	
 	@GetMapping("/catalog/id/{id}")
-//	@HystrixCommand(fallbackMethod = "getMovieInfoFallBack",
-//	commandProperties = {
-//@HystrixProperty(name = "execution.timeout.enabled",value = "true" ), 
-//@HystrixProperty(name = "circuitBreaker.enabled", value = "true"),
-//@HystrixProperty(name = "execution.isolation.thread.timeoutInMilliseconds", value = "2000"),
-//@HystrixProperty(name = "circuitBreaker.errorThresholdPercentage", value = "50"),
-//@HystrixProperty(name = "circuitBreaker.requestVolumeThreshold", value = "5"),
-//@HystrixProperty(name = "circuitBreaker.sleepWindowInMilliseconds", value = "5000")
-//	})
-	public MovieCatalog getMovieInfo(@PathVariable int id) 
+	//@Transactional(timeout = 120)
+   // @HystrixCommand(fallbackMethod = "getMovieInfoFallBack")
+	public MovieCatalog getMovieInfo(@PathVariable int id) //throws InterruptedException 
 	{
-//		int x=1/0;
-//		System.out.println("hello........................");
 		//Thread.sleep(5000);
 		return service.getCatalog(id);
 	}
