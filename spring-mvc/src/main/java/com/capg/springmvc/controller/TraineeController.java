@@ -49,6 +49,7 @@ public class TraineeController {
 		
 	}
 	
+	
 	@GetMapping("/find")
 	public String findTrainee(@RequestParam("tId") int id, Model m)
 	{

@@ -17,35 +17,35 @@ public class MovieInfoService {
 	@Autowired
 	RestTemplate rt;
 
-	@Value("${rating-get-uri}")
-	private String ratingGetUri;
-	
-	@Value("${catalog-get-uri}")
-	private String catalogGetUri;
-
-	public String getRatingGetUri() {
-		return ratingGetUri;
-	}
-
-	public void setRatingGetUri(String ratingGetUri) {
-		this.ratingGetUri = ratingGetUri;
-	}
-
-	public String getCatalogGetUri() {
-		return catalogGetUri;
-	}
-
-	public void setCatalogGetUri(String catalogGetUri) {
-		this.catalogGetUri = catalogGetUri;
-	}
+//	@Value("${rating-get-uri}")
+//	private String ratingGetUri;
+//	
+//	@Value("${catalog-get-uri}")
+//	private String catalogGetUri;
+//
+//	public String getRatingGetUri() {
+//		return ratingGetUri;
+//	}
+//
+//	public void setRatingGetUri(String ratingGetUri) {
+//		this.ratingGetUri = ratingGetUri;
+//	}
+//
+//	public String getCatalogGetUri() {
+//		return catalogGetUri;
+//	}
+//
+//	public void setCatalogGetUri(String catalogGetUri) {
+//		this.catalogGetUri = catalogGetUri;
+//	}
 
 	@HystrixCommand(fallbackMethod = "getMovieInfoCatalogFallBack" )
 	public MovieInfo getMovieInfoCatalog(int id)
 	{
 		MovieInfo movieInfo = new MovieInfo();
 
-		//MovieCatalog catalog=rt.getForObject("http://MOVIE-CATALOG-SERVICE/catalog/id/"+id, MovieCatalog.class);
-		MovieCatalog catalog=rt.getForObject("http://MOVIE-CATALOG-SERVICE/"+catalogGetUri+id, MovieCatalog.class);
+		MovieCatalog catalog=rt.getForObject("http://MOVIE-CATALOG-SERVICE/catalog/id/"+id, MovieCatalog.class);
+		//MovieCatalog catalog=rt.getForObject("http://MOVIE-CATALOG-SERVICE/"+catalogGetUri+id, MovieCatalog.class);
 
 		movieInfo.setId(id);
 		movieInfo.setMovieName(catalog.getMovieName());
@@ -58,8 +58,8 @@ public class MovieInfoService {
 	{
 		MovieInfo movieInfo = new MovieInfo();
 
-		//MovieRating rating=rt.getForObject("http://MOVIE-RATING-SERVICE/rating/id/"+id, MovieRating.class);
-		MovieRating rating=rt.getForObject("http://MOVIE-RATING-SERVICE/"+ratingGetUri+id, MovieRating.class);
+		MovieRating rating=rt.getForObject("http://MOVIE-RATING-SERVICE/rating/id/"+id, MovieRating.class);
+		//MovieRating rating=rt.getForObject("http://MOVIE-RATING-SERVICE/"+ratingGetUri+id, MovieRating.class);
 
 		movieInfo.setId(id);
 		movieInfo.setRating(rating.getRating());
